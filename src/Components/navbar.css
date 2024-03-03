@@ -33,6 +33,10 @@
     color: #00c7c4;  
     text-decoration: underline;
 }
+.nav2.active{
+    color: #00c7c4;  
+    text-decoration: underline;
+}
 
 .nav-menu li:last-child {
     margin-right: 0;

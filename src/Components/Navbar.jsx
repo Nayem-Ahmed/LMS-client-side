@@ -35,11 +35,11 @@ const Navbar = () => {
                     <li className='flex'><Link className='' onClick={closeMenu}>Pages</Link><IoIosArrowDown className='relative mt-1 hover:text-[#00c7c4]'></IoIosArrowDown>
                         {/* DropdownMenu */}
                         <ul className='dropdown-menu'>
-                            <li><NavLink className='dropdown-link' activeClassName='active' to='/' onClick={closeMenu}>FAQ</NavLink></li>
-                            <li><NavLink className='nav' to='/' onClick={closeMenu}>404 Error Page</NavLink></li>
-                            <li><NavLink className='nav' to='/' onClick={closeMenu}>Login</NavLink></li>
-                            <li><NavLink className='nav' to='/' onClick={closeMenu}>Register</NavLink></li>
-                            <li><NavLink className='nav' to='/' onClick={closeMenu}>Terms And Conditions</NavLink></li>
+                            <li><NavLink className='nav2' to='/faq' onClick={closeMenu}>FAQ</NavLink></li>
+                            <li><NavLink className='nav2' to='/error' onClick={closeMenu}>404 Error Page</NavLink></li>
+                            <li><NavLink className='nav2' to='/blog' onClick={closeMenu}>Blog</NavLink></li>
+                            <li><NavLink className='nav2' to='/res' onClick={closeMenu}>Register</NavLink></li>
+                            <li><NavLink className='nav2' to='/terms' onClick={closeMenu}>Terms And Conditions</NavLink></li>
                         </ul>
                     </li>
                     <li><NavLink className='nav' to="/blog" onClick={closeMenu}>Blog</NavLink></li>
@@ -50,13 +50,13 @@ const Navbar = () => {
                                 <img className='rounded-full w-8' src={user?.photoURL} alt="" />
                                 <span>{user?.displayName}</span>
                                 <NavLink>
-                                    <button onClick={logOut} className="bg-blue-500 hover:bg-blue-700 px-4 py-2 font-semibold text-white">Logout</button>
+                                    <button onClick={logOut} className="bg-[#00c7c4] hover:bg-cyan-700 px-5 py-2 font-semibold text-white rounded-sm">Logout</button>
                                 </NavLink>
 
                             </div>
 
                             :
-                            <NavLink onClick={logOut} to='/login'><button className="bg-blue-500 hover:bg-blue-700 px-4 py-2 font-semibold text-white" type="button" onClick={closeMenu}>LOGIN</button></NavLink>
+                            <NavLink onClick={logOut} to='/login'><button className="bg-[#00c7c4] hover:bg-cyan-600 px-5 py-2 font-semibold rounded-sm text-white" type="button" onClick={closeMenu}>LOGIN</button></NavLink>
                     }
 
                 </ul>
