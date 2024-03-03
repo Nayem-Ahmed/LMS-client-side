@@ -47,10 +47,16 @@ const Navbar = () => {
                     {
                         user?.email ?
                             <div className='flex items-center gap-2'>
-                                <img className='rounded-full w-8' src={user?.photoURL} alt="" />
-                                <span>{user?.displayName}</span>
+                                <div className="dropdown dropdown-end">
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full">
+                                            <img alt="banner img"   src={user?.photoURL} />
+                                        </div>
+                                    </div>
+                                </div>
+                                <span className='text-gray-500'>{user?.displayName}</span>
                                 <NavLink>
-                                    <button onClick={logOut} className="bg-[#00c7c4] hover:bg-cyan-700 px-5 py-2 font-semibold text-white rounded-sm">Logout</button>
+                                    <button onClick={logOut} className="bg-purple-500 hover:bg-purple-700 px-5 py-2 font-semibold text-white rounded-sm">Logout</button>
                                 </NavLink>
 
                             </div>
