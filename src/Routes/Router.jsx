@@ -5,7 +5,8 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import AddBook from "../Pages/AddBook";
-
+import Privetroute from "./Privetroute";
+ 
 const router = createBrowserRouter([
     {
         path: '/',
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addbook',
-                element: <AddBook></AddBook>,
+                element: <Privetroute><AddBook></AddBook></Privetroute>,
             },
             {
                 path:'/signup',

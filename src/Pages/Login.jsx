@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProviders';
 import { FcGoogle } from 'react-icons/fc';
 
@@ -9,6 +9,7 @@ import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
     const { signIn, signInWithGoogle } = useContext(AuthContext)
     const navigate = useNavigate()
+    const location = useLocation()
     const { register, handleSubmit, formState: { errors } } = useForm();
 
 
@@ -28,7 +29,7 @@ const Login = () => {
     const googleLogin = async () => {
         try {
             const result = await signInWithGoogle()
-            navigate('/')
+            navigate(location?.state ? location.state : '/');
             toast.success('User created successfully');
             // Additional logic or redirection after Google sign-in
         } catch (error) {

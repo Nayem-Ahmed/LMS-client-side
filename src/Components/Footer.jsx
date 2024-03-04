@@ -42,7 +42,7 @@ const Footer = () => {
                                         placeholder='Email Address'
                                         className="py-2 px-4 rounded-l-lg border border-gray-300 focus:outline-none focus:border-indigo-500"
                                     />
-                                    <button className="bg-purple-500 text-white py-2 px-4 rounded-r-lg hover:bg-indigo-600 focus:outline-none">
+                                    <button className="bg-purple-500 text-white py-2 px-4 rounded-r-lg hover:bg-cyan-400 focus:outline-none">
                                         <FaLongArrowAltRight />
                                     </button>
                                 </div>

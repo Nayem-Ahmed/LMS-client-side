@@ -3,7 +3,7 @@ import banner from '../assets/banner.jpg'
 
 const Banner = () => {
     return (
-        <div className="relative bg-cover bg-center bg-gradient-to-r from-purple-500 to-indigo-500 h-[500px]">
+        <div className="relative h-[500px]">
             {/* Background Image */}
             <img
                 className="absolute inset-0 w-full h-full object-cover bg-opacity-50"

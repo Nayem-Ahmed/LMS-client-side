@@ -1,10 +1,34 @@
 import { useForm } from 'react-hook-form';
+import { AddBookPost } from '../API/books';
+import { imgUpload } from '../API/imgbb';
+import useAuth from '../Hooks/useAuth';
+import { toast } from 'react-toastify';
 
 const AddBook = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { user } = useAuth();
 
-    const onSubmit = (data) => {
-        console.log(data); // Handle form submission here
+    const onSubmit = async (data) => {
+        try {
+            console.log(data);
+            // Assuming imgUpload is a function that handles image upload
+            const imgData = await imgUpload(data.bookImage[0]);
+
+            const updatedData = {
+                ...data,
+                bookImage: imgData?.data?.display_url,
+                email: user?.email,
+            };
+
+            // save products data in Database
+            await AddBookPost(updatedData)
+            toast.success('Added Book');
+            reset();
+
+        } catch (error) {
+            toast.error('Error:', error.message);
+
+        }
     };
 
     return (

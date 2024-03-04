@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { AuthContext } from "../Provider/Authprovider";
+  import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-const Privetroute = () => {
+import { AuthContext } from "../Provider/AuthProviders";
+const Privetroute = ({children}) => {
     const {user,loading} = useContext(AuthContext)
     const location = useLocation();
     if (loading) {

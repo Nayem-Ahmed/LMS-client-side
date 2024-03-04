@@ -66,8 +66,8 @@ const Signup = () => {
     };
 
     return (
-        <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-            <div className="bg-white mt-6 p-8 rounded shadow-md w-[500px]">
+        <div className="bg-gray-100 min-h-screen flex items-center justify-center ">
+            <div className="bg-white mt-6 p-8 mb-2 rounded shadow-md w-[500px]">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-600 mb-2">
                         Name
