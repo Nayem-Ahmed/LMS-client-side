@@ -51,7 +51,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p className=' text-center mt-4 text-gray-500'> 2024 - All right reserved by  Nayem Ahmed</p>
+            <p className=' text-center mt-4 text-gray-500'> 2024 - All right reserved by <span className='font-medium text-purple-500 hover:underline'> Nayem Ahmed</span></p>
 
         </div>
     );

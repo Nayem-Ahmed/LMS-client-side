@@ -32,7 +32,7 @@ const Navbar = () => {
                     <li><NavLink className='nav' to="/addbook" onClick={closeMenu}>Add Book</NavLink></li>
                     <li><NavLink className='nav' to="/allbook" onClick={closeMenu}>All Books</NavLink></li>
                     <li><NavLink className='nav' to="/borrowed" onClick={closeMenu}>Borrowed Books</NavLink></li>
-                    <li className='flex'><Link className='' onClick={closeMenu}>Pages</Link><IoIosArrowDown className='relative mt-1 hover:text-[#00c7c4]'></IoIosArrowDown>
+                    <li className='flex'><Link className='' onClick={closeMenu}>Pages</Link><IoIosArrowDown className='relative mt-1 hover:text-purple-500'></IoIosArrowDown>
                         {/* DropdownMenu */}
                         <ul className='dropdown-menu'>
                             <li><NavLink className='nav2' to='/faq' onClick={closeMenu}>FAQ</NavLink></li>
@@ -50,7 +50,7 @@ const Navbar = () => {
                                 <div className="dropdown dropdown-end">
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                         <div className="w-10 rounded-full">
-                                            <img alt="banner img"   src={user?.photoURL} />
+                                            <img alt="banner img" src={user?.photoURL} />
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@ const Navbar = () => {
                             </div>
 
                             :
-                            <NavLink onClick={logOut} to='/login'><button className="bg-[#00c7c4] hover:bg-cyan-600 px-5 py-2 font-semibold rounded-sm text-white" type="button" onClick={closeMenu}>LOGIN</button></NavLink>
+                            <NavLink onClick={logOut} to='/login'><button className="bg-purple-500 hover:bg-purple-700 px-5 py-2 font-semibold rounded-sm text-white" type="button" onClick={closeMenu}>LOGIN</button></NavLink>
                     }
 
                 </ul>

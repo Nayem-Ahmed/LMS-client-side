@@ -14,7 +14,7 @@
     display: none;
     /* Hide menu icon by default */
     cursor: pointer;
-    color: #00c7c4;
+    color: purple;
     font-size: 1.5rem;
 }
 
@@ -30,11 +30,11 @@
     position: relative;
 }
 .nav.active{
-    color: #00c7c4;  
+    color: purple;  
     text-decoration: underline;
 }
 .nav2.active{
-    color: #00c7c4;  
+    color: purple;  
     text-decoration: underline;
 }
 
@@ -44,13 +44,13 @@
 
 .nav-menu a {
     text-decoration: none;
-    color: #7d8185;
+    color: #262626;
     font-weight: 500;
 }
 
 .nav-menu a:hover {
     text-decoration: underline;
-    color: #00c7c4;
+    color: purple;
     transition: .4s;
 }
  

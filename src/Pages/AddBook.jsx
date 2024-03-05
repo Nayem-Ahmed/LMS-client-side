@@ -32,8 +32,8 @@ const AddBook = () => {
     };
 
     return (
-        <div className='my-8'>
-            <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg mx-auto py-5 p-10 shadow-md">
+        <div className='bg-gray-100 p-5'>
+            <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg mx-auto py-5 p-10 shadow-md bg-white">
                 <label className="block mb-4">
                     Book Image:
                     <input

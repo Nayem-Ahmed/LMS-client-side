@@ -110,7 +110,7 @@ const Signup = () => {
                     </label>
                     <input id="photo" className="border border-gray-300 p-2 mb-4 w-full" type="file" accept="image/*" {...register('photo')} />
 
-                    <button type="submit" className="bg-[#00c7c4] text-white p-2 w-full rounded hover:bg-cyan-700">
+                    <button type="submit" className="bg-purple-500 text-white p-2 w-full rounded hover:bg-purple-700">
                         Sign Up
                     </button>
                     <i className="divider">OR</i>
