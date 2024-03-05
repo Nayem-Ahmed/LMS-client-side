@@ -1,12 +1,17 @@
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css'
-import React from 'react';
+import React, { useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
+import ModalPopup from '../Components/ModalPopup';
 
 const BookCategoryDetails = () => {
     const bookDetails = useLoaderData();
     console.log(bookDetails);
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const openModal = () => setModalOpen(true);
+    const closeModal = () => setModalOpen(false);
 
     return (
         <div className='my-10 p-5'>
@@ -29,19 +34,30 @@ const BookCategoryDetails = () => {
                     </div>
                     <div className='flex flex-row items-center justify-between mb-2'>
                         <Rating
-                            style={{ maxWidth: 180 }}
+                            style={{ maxWidth: 150 }}
                             value={bookDetails.Rating}
                             readOnly
                         />
 
                     </div>
                     <div className='mb-5 text-lg text-neutral-500'>${bookDetails.description}</div>
-                    <button
-                        type="button"
-                        className="bg-purple-600 hover:bg-purple-800 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    >
-                        Borrow
-                    </button>
+                    <div>
+                        <button
+                            onClick={openModal}
+                            type="button"
+                            className="bg-purple-600 hover:bg-purple-800 mr-3 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        >
+                            Borrow
+                        </button>
+                        <ModalPopup bookDetails={bookDetails} isOpen={isModalOpen} onRequestClose={closeModal} ></ModalPopup>
+                        <button
+                            type="button"
+                            className="bg-purple-600 hover:bg-purple-800 ml-3  file: text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        >
+                            Read
+                        </button>
+
+                    </div>
                 </div>
             </div>
         </div>

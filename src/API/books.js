@@ -10,3 +10,8 @@ export const getAllBooks = async () => {
     const { data } = await axiosPublice('/addbooks')
     return data;
 }
+// borrowed 
+export const  Borrowedbooks = async (borrowed) => {
+    const { addData } = await axiosPublice.post('/borrowed', borrowed)
+    return addData
+  }
