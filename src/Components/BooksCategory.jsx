@@ -32,14 +32,15 @@ const BooksCategory = () => {
             <Categoris></Categoris>
             <div className='grid md:grid-cols-4 gap-6 my-8 p-4'>
                 {books.map(book => (
-                    <Link key={book._id} to={`/addbook/${book._id}`}>
-                        <div className="card card-compact text-center rounded-none hover:underline ">
-                            <figure><img className='w-[181px] h-[276px]' src={book.bookImage} alt={book.bookName} /></figure>
-                            <div className="card-body text-center">
-                                <h2 className="card-title text-center mx-auto text-purple-500">{book.bookName}</h2>
-                                <p className=' font-medium'>{book.category}</p>
-                            </div>
-                        </div></Link>
+
+                    <Link key={book?._id} to={`/addbook/${book._id}`} className="card card-compact text-center rounded-none bg-[#faf7f2]">
+                        <figure><img className='w-[181px] h-[276px]' src={book.bookImage} alt={book.bookName} /></figure>
+                        <div className="card-body text-center">
+                            <h2 className="card-title text-center mx-auto">{book.bookName}</h2>
+                            <p className=' font-medium text-lg text-purple-500'>{book.category}</p>
+                        </div>
+                    </Link>
+
                 ))}
 
             </div>

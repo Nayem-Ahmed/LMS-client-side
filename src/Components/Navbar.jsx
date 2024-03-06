@@ -21,7 +21,6 @@ const Navbar = () => {
 
     return (
         <Headroom>
-
             <nav className="navbar z-50 relative  ">
                 <div className="navbar-container">
                     <div className="navbar-logo">
@@ -45,7 +44,6 @@ const Navbar = () => {
                                 <li><NavLink className='nav2' to='/terms' onClick={closeMenu}>Terms And Conditions</NavLink></li>
                             </ul>
                         </li>
-                        <li><NavLink className='nav' to="/blog" onClick={closeMenu}>Blog</NavLink></li>
                         <li><NavLink className='nav' to="/contactus" onClick={closeMenu}>Contact us</NavLink></li>
                         {
                             user?.email ?

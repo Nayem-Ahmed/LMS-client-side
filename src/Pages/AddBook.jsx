@@ -26,7 +26,7 @@ const AddBook = () => {
             reset();
 
         } catch (error) {
-            toast.error('Error:', error.message);
+            toast.error('Error: Something wrong', error.message);
 
         }
     };

@@ -6,8 +6,8 @@ import { toast } from 'react-toastify';
 
 
 const ModalPopup = ({ isOpen, onRequestClose, bookDetails }) => {
-    const { user } = useAuth()
     console.log(bookDetails);
+    const { user } = useAuth()
     const handleSubmit = async (e) => {
         e.preventDefault();
         const date = e.target.date.value;
@@ -15,6 +15,9 @@ const ModalPopup = ({ isOpen, onRequestClose, bookDetails }) => {
             name: user?.displayName,
             email: user?.email,
             returndate: date,
+            bookImage:bookDetails.bookImage,
+            bookName:bookDetails.bookName,
+            category:bookDetails.category,
 
         };
         try {

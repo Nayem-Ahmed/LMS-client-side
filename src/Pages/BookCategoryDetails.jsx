@@ -7,7 +7,6 @@ import ModalPopup from '../Components/ModalPopup';
 
 const BookCategoryDetails = () => {
     const bookDetails = useLoaderData();
-    console.log(bookDetails);
     const [isModalOpen, setModalOpen] = useState(false);
 
     const openModal = () => setModalOpen(true);
@@ -28,10 +27,10 @@ const BookCategoryDetails = () => {
                 </div>
                 <div className='flex flex-col flex-1'>
                     <div className='font-semibold text-2xl mb-2'>{bookDetails.bookName}</div>
-                    <div className=' text-xl mb-2'>{bookDetails.authorName}</div>
-                    <div className='font-light text-neutral-500 mb-2'>
+                    <div className='text-xl mb-2'>
                         {bookDetails.category}
                     </div>
+                    <div className='text-gray-500 mb-2'>Author : {bookDetails.authorName}</div>
                     <div className='flex flex-row items-center justify-between mb-2'>
                         <Rating
                             style={{ maxWidth: 150 }}

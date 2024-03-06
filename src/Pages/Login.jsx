@@ -23,7 +23,7 @@ const Login = () => {
             })
             .catch((error) => {
                 console.error(error);
-                toast('Envalid Password')
+                toast.error(error.message);
             })
     };
     const googleLogin = async () => {
