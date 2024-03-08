@@ -25,7 +25,7 @@ const Contact = () => {
         }
     };
     return (
-        <div className='flex items-center justify-between  flex-col lg:flex-row md:flex-row gap-5 p-5 bg-gray-50'>
+        <div className='flex items-center justify-between  flex-col lg:flex-row md:flex-row gap-5 p-5 bg-purple-50'>
             <div className='basis-1/2 w-full'>
                 <form onSubmit={handleSubmit(onSubmit)} className="shadow-sm rounded w-full  p-5 my-4">
                     <h2 className="text-2xl font-bold mb-4 text-center">Contact With Us</h2>

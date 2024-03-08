@@ -40,6 +40,7 @@ const BookCategoryDetails = () => {
 
                     </div>
                     <div className='mb-5 text-lg text-neutral-500'>${bookDetails.description}</div>
+                    <div className='mb-5 text-lg text-neutral-500'>quantity : {bookDetails.quantity}</div>
                     <div>
                         <button
                             onClick={openModal}
@@ -49,12 +50,21 @@ const BookCategoryDetails = () => {
                             Borrow
                         </button>
                         <ModalPopup bookDetails={bookDetails} isOpen={isModalOpen} onRequestClose={closeModal} ></ModalPopup>
-                        <button
-                            type="button"
-                            className="bg-purple-600 hover:bg-purple-800 ml-3  file: text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                        >
-                            Read
-                        </button>
+                        {/* -------------------- */}
+                        {/* You can open the modal using document.getElementById('ID').showModal() method */}
+                        {/* <button className="bg-purple-600 hover:bg-purple-800 ml-3  file: text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => document.getElementById('my_modal_4').showModal()}>Read</button>
+                        <dialog id="my_modal_4" className="modal">
+                            <div className="modal-box w-11/12 max-w-5xl">
+                                <h3 className="font-bold text-lg">{bookDetails.bookName}</h3>
+                                <p className="py-4">${bookDetails.description}</p>
+                                <div className="modal-action">
+                                    <form method="dialog">
+                                        <button className="btn">Close</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog> */}
+                        {/* -------------------- */}
 
                     </div>
                 </div>

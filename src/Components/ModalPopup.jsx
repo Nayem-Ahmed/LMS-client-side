@@ -3,11 +3,13 @@ import Modal from 'react-modal';
 import useAuth from '../Hooks/useAuth';
 import { Borrowedbooks } from '../API/books';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 const ModalPopup = ({ isOpen, onRequestClose, bookDetails }) => {
     console.log(bookDetails);
-    const { user } = useAuth()
+    const { user } = useAuth();
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const date = e.target.date.value;
@@ -15,14 +17,15 @@ const ModalPopup = ({ isOpen, onRequestClose, bookDetails }) => {
             name: user?.displayName,
             email: user?.email,
             returndate: date,
-            bookImage:bookDetails.bookImage,
-            bookName:bookDetails.bookName,
-            category:bookDetails.category,
+            bookImage: bookDetails.bookImage,
+            bookName: bookDetails.bookName,
+            category: bookDetails.category,
 
         };
         try {
             await Borrowedbooks(BorrowedBooksData);
             toast.success('Borrowed Books Success')
+            navigate('/borrowed')
 
         } catch (error) {
             toast.error('Error:', error);
@@ -58,7 +61,6 @@ const ModalPopup = ({ isOpen, onRequestClose, bookDetails }) => {
                         className="form-input mt-1 block w-full"
                     />
                 </label>
-
 
                 <div className="flex  gap-4">
                     <button type="submit" className="btn-sm bg-purple-500 text-white px-3 py-1 rounded-md hover:bg-purple-800">

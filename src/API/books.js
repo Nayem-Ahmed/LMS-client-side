@@ -18,9 +18,6 @@ export const getAddAllBooks = async (email) => {
     return data;
 }
 
-// Books Update
-
-
 // borrowed 
 export const Borrowedbooks = async (borrowed) => {
     const { addData } = await axiosPublice.post('/borrowed', borrowed)
