@@ -23,7 +23,7 @@ export const Borrowedbooks = async (borrowed) => {
     const { addData } = await axiosPublice.post('/borrowed', borrowed)
     return addData;
 }
-// get borrowed 
+// get borrowed by params 
 export const getBorrowedBooks = async (email) => {
     const { data } = await axiosPublice(`/borrowed/${email}`)
     return data;

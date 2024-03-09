@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 import useAuth from '../Hooks/useAuth';
 import { Borrowedbooks } from '../API/books';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import axiosPublice from '../API/axiosPublice';
 
 
 const ModalPopup = ({ isOpen, onRequestClose, bookDetails }) => {
+    const [quantity, setQuantity] = useState(bookDetails?.quantity)
     console.log(bookDetails);
     const { user } = useAuth();
     const navigate = useNavigate();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const date = e.target.date.value;
@@ -25,6 +28,13 @@ const ModalPopup = ({ isOpen, onRequestClose, bookDetails }) => {
         try {
             await Borrowedbooks(BorrowedBooksData);
             toast.success('Borrowed Books Success')
+
+            // Reduce the quantity of the book by 1
+            const newQuantity = quantity - 1;
+            setQuantity(newQuantity)
+
+            // Update the quantity of the book in the database
+            axiosPublice.patch(`/updateQuantity/${bookDetails._id}`, { quantity: newQuantity })
             navigate('/borrowed')
 
         } catch (error) {
