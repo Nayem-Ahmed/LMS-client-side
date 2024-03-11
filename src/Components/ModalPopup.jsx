@@ -16,10 +16,19 @@ const ModalPopup = ({ isOpen, onRequestClose, bookDetails }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const date = e.target.date.value;
+        // current datemake
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = (currentDate.getMonth() + 1);
+        const day = currentDate.getDate().toString();
+        const borroweddate = `${year}-${month}-${day}`;
+
+        // send books information
         const BorrowedBooksData = {
             name: user?.displayName,
             email: user?.email,
             returndate: date,
+            borrowedDate:borroweddate,
             bookImage: bookDetails.bookImage,
             bookName: bookDetails.bookName,
             category: bookDetails.category,
@@ -34,11 +43,11 @@ const ModalPopup = ({ isOpen, onRequestClose, bookDetails }) => {
             setQuantity(newQuantity)
 
             // Update the quantity of the book in the database
-            axiosPublice.patch(`/updateQuantity/${bookDetails._id}`, { quantity: newQuantity })
+            axiosPublice.patch(`/addbooks/${bookDetails._id}`, { quantity: newQuantity })
             navigate('/borrowed')
 
         } catch (error) {
-            toast.error('Error:', error);
+            toast.error('You have already borrowed this book', error);
 
         }
 

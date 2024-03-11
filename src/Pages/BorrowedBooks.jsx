@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../Hooks/useAuth';
 import { getBorrowedBooks } from '../API/books';
+import { toast } from 'react-toastify';
+import axiosPublice from '../API/axiosPublice';
 
 const BorrowedBooks = () => {
     const [borrowedbooks, setBorrowedbooks] = useState([]);
+    console.log(borrowedbooks);
     const { user } = useAuth();
 
     useEffect(() => {
@@ -18,6 +21,17 @@ const BorrowedBooks = () => {
 
         fetchData();
     }, []);
+    const handleReturnBook = async () => {
+        try {
+            console.log('click');
+            // Display success message
+            // toast.success('Book returned successfully');
+        } catch (error) {
+            // Display error message if something goes wrong
+            toast.error('Error:', error);
+        }
+    };
+
 
     return (
         <div>
@@ -37,9 +51,10 @@ const BorrowedBooks = () => {
                                 <div className="card-body text-center">
                                     <h2 className="card-title text-center mx-auto">{borrowed.bookName}</h2>
                                     <p className=' font-medium text-lg text-purple-500'>{borrowed.category}</p>
+                                    <p className='  '>borrowedDate : {borrowed.borrowedDate}</p>
                                     <p className='  '>return : {borrowed.returndate}</p>
                                     <div className="card-actions">
-                                        <button className="bg-white mx-auto text-purple-500 hover:bg-purple-600 hover:text-white px-5 py-2 rounded-lg font-semibold shadow">Return</button>
+                                        <button onClick={handleReturnBook} className="bg-white mx-auto text-purple-500 hover:bg-purple-600 hover:text-white px-5 py-2 rounded-lg font-semibold shadow">Return</button>
                                     </div>
                                 </div>
                             </div>
